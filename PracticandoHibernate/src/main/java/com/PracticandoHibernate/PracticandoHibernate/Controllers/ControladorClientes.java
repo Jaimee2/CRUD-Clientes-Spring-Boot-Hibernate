@@ -4,6 +4,7 @@ import com.PracticandoHibernate.PracticandoHibernate.Dao.ClienteDao;
 import com.PracticandoHibernate.PracticandoHibernate.Modelos.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ public class ControladorClientes {
     ClienteDao clienteDao;
 
     //CREATE
-    @RequestMapping(value = "/crearCliente")
+    @RequestMapping(value = "/crearCliente", method = RequestMethod.POST)
     public Cliente crearCliente(@RequestParam(value = "nombre") String nombre,
                                 @RequestParam(value = "apellido") String apellido,
                                 @RequestParam(value = "direccion") String direccion){
@@ -31,13 +32,13 @@ public class ControladorClientes {
     }
 
     //READ
-    @RequestMapping(value = "/ListarClientes")
+    @RequestMapping(value = "/ListarClientes" ,method = RequestMethod.GET)
     public List<Cliente> listaClientes(){
         return clienteDao.listarClientes();
     }
 
     //UPDATE
-    @RequestMapping(value = "/updateClienteID")
+    @RequestMapping(value = "/updateClienteID", method = RequestMethod.POST)
     public Cliente updateCliente(@RequestParam(value = "id") String id,
                                  @RequestParam(value = "nombre") String nombre,
                                  @RequestParam(value = "apellido") String apellido,
@@ -51,7 +52,7 @@ public class ControladorClientes {
     }
 
     //DELETE
-    @RequestMapping(value = "/deleteClienteID")
+    @RequestMapping(value = "/deleteClienteID",  method = RequestMethod.DELETE)
     public String deleteCliente(@RequestParam(value = "id") String id){
 
         System.out.println("Entro DELETE por id");
