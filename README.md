@@ -9,6 +9,9 @@ Mini proyecto para practicar ORM Hibernate
   
 ### Framework gestor de ORM: Hibernate.
 
+![image](https://user-images.githubusercontent.com/52107919/187409604-580b6b9f-4522-4694-ba53-b1e7ffd8cfe2.png)
+
+
 ## Imágenes ilustrativas de la implementación
 ### Tabla clientes
 ![Tabla clientes](https://user-images.githubusercontent.com/52107919/187408452-0e631cf4-926c-4bcd-801a-e2d809163246.png)
